@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Zodiak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px 0;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Game Zodiak</h2>
+    <p>Masukkan tanggal dan bulan lahir Anda:</p>
+    <input type="text" id="tanggal" placeholder="Tanggal">
+    <input type="text" id="bulan" placeholder="Bulan">
+    <button onclick="cekZodiak()">Cek Zodiak</button>
+    <br><br>
+    <div id="hasil"></div>
+
+    <script>
+        function cekZodiak() {
+            var tanggal = parseInt(document.getElementById("tanggal").value);
+            var bulan = parseInt(document.getElementById("bulan").value);
+            var zodiak = "";
+            var kesehatan = "";
+            var asmara = "";
+            var keuangan = "";
+            var karier = "";
+    
+            if ((bulan == 3 && tanggal >= 21) || (bulan == 4 && tanggal <= 19)) {
+                zodiak = "Aries";
+                kesehatan = "Kesehatan: Anda mungkin memiliki energi ekstra, namun perlu waspada terhadap cedera.";
+                asmara = "Asmara: Kehidupan asmara Anda akan menarik, tetapi hindari konflik yang tidak perlu.";
+                keuangan = "Keuangan: Ini adalah waktu yang baik untuk merencanakan investasi atau pengeluaran besar.";
+                karier = "Karier: Ambil inisiatif dan jadilah proaktif dalam pekerjaan Anda.";
+            } else if ((bulan == 4 && tanggal >= 20) || (bulan == 5 && tanggal <= 20)) {
+                zodiak = "Taurus";
+                kesehatan = "Kesehatan: Perhatikan pola makan dan istirahat yang cukup.";
+                asmara = "Asmara: Ada potensi konflik, tetapi komunikasi yang baik dapat membantu.";
+                keuangan = "Keuangan: Berhati-hatilah dalam pengeluaran, hindari pemborosan.";
+                karier = "Karier: Pertahankan konsistensi dan fokus pada tujuan Anda.";
+            } else if ((bulan == 5 && tanggal >= 21) || (bulan == 6 && tanggal <= 20)) {
+                zodiak = "Gemini";
+                kesehatan = "Kesehatan: Tetap aktif secara fisik dan mental untuk menjaga keseimbangan.";
+                asmara = "Asmara: Jaga komunikasi dan pertukaran ide dengan pasangan.";
+                keuangan = "Keuangan: Waktu yang baik untuk mencari peluang baru.";
+                karier = "Karier: Manfaatkan kreativitas Anda dalam pekerjaan.";
+            } else if ((bulan == 6 && tanggal >= 21) || (bulan == 7 && tanggal <= 22)) {
+                zodiak = "Cancer";
+                kesehatan = "Kesehatan: Prioritaskan perawatan diri dan perhatikan kondisi emosional Anda.";
+                asmara = "Asmara: Berikan waktu untuk keintiman dan perhatikan kebutuhan pasangan.";
+                keuangan = "Keuangan: Cermati pengeluaran dan perencanaan keuangan Anda.";
+                karier = "Karier: Fokus pada kolaborasi dan membangun hubungan baik di tempat kerja.";
+            } else if ((bulan == 7 && tanggal >= 23) || (bulan == 8 && tanggal <= 22)) {
+                zodiak = "Leo";
+                kesehatan = "Kesehatan: Tetap aktif dan perhatikan pola makan sehat.";
+                asmara = "Asmara: Perhatikan kebutuhan emosional pasangan dan berikan dukungan.";
+                keuangan = "Keuangan: Pertimbangkan untuk mengelola keuangan dengan lebih hati-hati.";
+                karier = "Karier: Ambil inisiatif dan jadilah pemimpin di tempat kerja.";
+            } else if ((bulan == 8 && tanggal >= 23) || (bulan == 9 && tanggal <= 22)) {
+                zodiak = "Virgo";
+                kesehatan = "Kesehatan: Perhatikan pola tidur dan perawatan diri secara menyeluruh.";
+                asmara = "Asmara: Berikan perhatian khusus pada komunikasi dan pengertian dalam hubungan.";
+                keuangan = "Keuangan: Buatlah perencanaan keuangan yang lebih rinci dan hemat.";
+                karier = "Karier: Fokus pada detail dan kualitas pekerjaan Anda.";
+            } else if ((bulan == 9 && tanggal >= 23) || (bulan == 10 && tanggal <= 22)) {
+                zodiak = "Libra";
+                kesehatan = "Kesehatan: Jaga keseimbangan antara aktivitas fisik dan mental.";
+                asmara = "Asmara: Hindari konflik dan cari kesepakatan dalam hubungan.";
+                keuangan = "Keuangan: Pertimbangkan investasi jangka panjang dan atur keuangan secara bijaksana.";
+                karier = "Karier: Manfaatkan kreativitas Anda untuk menyelesaikan tugas dengan baik.";
+            } else if ((bulan == 10 && tanggal >= 23) || (bulan == 11 && tanggal <= 21)) {
+                zodiak = "Scorpio";
+                kesehatan = "Kesehatan: Perhatikan stres dan prioritaskan waktu untuk bersantai.";
+                asmara = "Asmara: Perhatikan kejujuran dan kepercayaan dalam hubungan.";
+                keuangan = "Keuangan: Buatlah rencana pengeluaran yang bijaksana dan hindari spekulasi.";
+                karier = "Karier: Pertimbangkan untuk mengembangkan keterampilan baru dan berinovasi di tempat kerja.";
+            } else if ((bulan == 11 && tanggal >= 22) || (bulan == 12 && tanggal <= 21)) {
+                zodiak = "Sagittarius";
+                kesehatan = "Kesehatan: Tetap aktif dan hindari perilaku yang berisiko.";
+                asmara = "Asmara: Jaga komunikasi terbuka dan pertahankan kebebasan dalam hubungan.";
+                keuangan = "Keuangan: Fokus pada pengelolaan keuangan jangka panjang dan hemat.";
+                karier = "Karier: Manfaatkan energi positif Anda untuk mengejar tujuan karier Anda.";
+            } else if ((bulan == 12 && tanggal >= 22) || (bulan == 1 && tanggal <= 19)) {
+                zodiak = "Capricorn";
+                kesehatan = "Kesehatan: Prioritaskan istirahat yang cukup dan jaga keseimbangan antara kerja dan istirahat.";
+                asmara = "Asmara: Berikan perhatian pada kebutuhan emosional pasangan dan berikan dukungan.";
+                keuangan = "Keuangan: Buatlah rencana keuangan yang jelas dan tetap konsisten dalam pengeluaran.";
+                karier = "Karier: Tetap fokus pada tujuan karier Anda dan lakukan langkah-langkah yang diperlukan untuk mencapainya.";
+            } else if ((bulan == 1 && tanggal >= 20) || (bulan == 2 && tanggal <= 18)) {
+                zodiak = "Aquarius";
+                kesehatan = "Kesehatan: Tetap aktif secara fisik dan berikan waktu untuk rekreasi.";
+                asmara = "Asmara: Jaga komunikasi terbuka dan pertimbangkan kebutuhan pasangan.";
+                keuangan = "Keuangan: Evaluasi dan atur ulang rencana keuangan Anda secara teratur.";
+                karier = "Karier: Manfaatkan kreativitas Anda dalam menyelesaikan tugas-tugas di tempat kerja.";
+            } else if ((bulan == 2 && tanggal >= 19) || (bulan == 3 && tanggal <= 20)) {
+                zodiak = "Pisces";
+                kesehatan = "Kesehatan: Perhatikan stres dan prioritaskan waktu untuk relaksasi.";
+                asmara = "Asmara: Berikan perhatian pada kebutuhan emosional pasangan dan berikan dukungan.";
+                keuangan = "Keuangan: Hindari pengeluaran impulsif dan pertimbangkan pilihan investasi yang aman.";
+                karier = "Karier: Fokus pada kreativitas dan intuisi Anda dalam menyelesaikan tugas-tugas.";
+            }
+    
+            // Tampilkan hasil
+            var hasil = document.getElementById("hasil");
+            hasil.innerHTML = "<strong>Zodiak:</strong> " + zodiak + "<br>" +
+                              "<strong>Kesehatan:</strong> " + kesehatan + "<br>" +
+                              "<strong>Asmara:</strong> " + asmara + "<br>" +
+                              "<strong>Keuangan:</strong> " + keuangan + "<br>" +
+                              "<strong>Karier:</strong> " + karier;
+        }
+    </script>
+  
+        
+    </body>
+    </html>

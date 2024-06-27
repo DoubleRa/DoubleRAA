@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULIR PENERIMAAN PEGAWAI</title>
+</head>
+<body>
+    <h2>Formulir Penerimaan Pegawai</h2>
+    <form action="/submit" method="post">
+        <fieldset>
+            <legend>Informasi Pribadi</legend>
+            <label for="nama">Nama Lengkap:</label><br>
+         <input type="text" id="nama" name="nama" required><br><br>
+         <label for="jenis_kelamin">Jenis Kelamin:</label><br>
+         <input type="radio" id="laki_laki" name="jenis_kelamin" value="laki-laki" required>
+         <label for="laki_laki">Laki-laki</label>
+         <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan" required>
+         <label for="perempuan">Perempuan</label><br><br>
+
+         <label for="tinggi_badan">Tinggi Badan (cm):</label><br>
+         <input type="number" id="tinggi_badan" name="tinggi_badan" required><br><br>
+
+         <label for="berat_badan">Berat Badan (kg):</label><br>
+         <input type="number" id="berat_badan" name="berat_badan" required><br><br>
+         <label for="alamat">Alamat Tempat Tinggal:</label><br>
+            <textarea id="alamat" name="alamat" rows="4" required></textarea><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Pendidikan</legend>
+            <label for="pendidikan">Pendidikan Terakhir:</label><br>
+            <select id="pendidikan" name="pendidikan" required>
+                <option value="D3">D3</option>
+                <option value="S1">S1</option>
+            </select><br><br>
+
+            <label for="jurusan">Jurusan:</label><br>
+            <input type="text" id="jurusan" name="jurusan" required><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Kriteria Seleksi</legend>
+            <label for="ipk">IPK:</label><br>
+            <input type="number" id="ipk" name="ipk" step="0.01" min="3" max="4" required><br><br>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

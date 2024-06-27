@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        input[type="number"] {
+            padding: 8px;
+            width: 100px;
+        }
+        input[type="submit"] {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Perhitungan Gaji</h2>
+        <form id="gajiForm">
+            <label for="jamKerja">Jumlah Jam Kerja:</label><br>
+            <input type="number" id="jamKerja" name="jamKerja" min="0" required><br><br>
+            <input type="submit" value="Hitung">
+        </form>
+        <p id="hasil"></p>
+    </div>
+
+    <script>
+        document.getElementById("gajiForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var jamKerja = parseInt(document.getElementById("jamKerja").value);
+            var gajiTotal = hitungGaji(jamKerja);
+            document.getElementById("hasil").innerHTML = "Gaji Total: Rp " + gajiTotal;
+        });
+        function hitungGaji(jamKerja) {
+            var gajiHarian = 50000;
+            var gajiLembur = 0;
+            var bonusMakan = 0;
+            
+            if (jamKerja >= 20) {
+                bonusMakan = 5000;
+            }
+            if (jamKerja >= 3) {
+                gajiLembur = 35000 * (jamKerja - 2);
+            } else if (jamKerja >= 1 && jamKerja <= 2) {
+                gajiLembur = 25000 * jamKerja;
+            }
+            var gajiTotal = (gajiHarian + gajiLembur) - bonusMakan;
+            return gajiTotal;
+        }
+    </script>
+</body>
+</html>
